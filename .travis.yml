@@ -1,0 +1,15 @@
+language: node_js
+node_js: 11
+branches:
+  only: master
+deploy:
+  # fqdn: mtgeni.us
+  github-token:
+    secure: 
+  keep-history: true
+  local-dir: src
+  on:
+    branch: master
+  provider: pages
+  skip-cleanup: true
+  target-branch: gh-pages

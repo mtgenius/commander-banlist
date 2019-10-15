@@ -1,4 +1,5 @@
 .dockerignore
+.travis.yml
 Dockerfile
 LICENSE
 README.md

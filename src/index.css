@@ -18,6 +18,17 @@ body {
   padding: 0;
 }
 
+#copyright {
+  line-height: 1.25em;
+  padding-top: 0.75em;
+  text-align: center;
+}
+
+#copyright a {
+  color: #F0F0F0;
+  text-decoration: underline;
+}
+
 #error {
   color: #F0C0C0;
   display: none;
