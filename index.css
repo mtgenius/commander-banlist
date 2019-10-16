@@ -1,0 +1,126 @@
+abbr {
+  border-width: 0;
+  cursor: help;
+  text-decoration: none;
+}
+
+.banned {
+  color: #F04040;
+}
+
+body {
+  background-color: #202020;
+  color: #F0F0F0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#copyright {
+  line-height: 1.25em;
+  padding-top: 0.75em;
+  text-align: center;
+}
+
+#copyright a {
+  color: #F0F0F0;
+  text-decoration: underline;
+}
+
+#error {
+  color: #F0C0C0;
+  display: none;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+#loading {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#loading > strong {
+  color: #808080;
+}
+
+#success {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0 0 1rem 1rem;
+}
+
+table {
+  border-spacing: 0;
+  border-width: 0 0 1px 0;
+  box-sizing: border-box;
+  margin-right: 1rem;
+}
+
+table,
+td,
+th {
+  border-color: #303030;
+  border-style: solid;
+}
+
+tbody td {
+  border-width: 1px 1px 0 0;
+  cursor: help;
+  width: 1rem;
+}
+
+tbody th {
+  border-width: 1px 1px 0 1px;
+  font-weight: normal;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: rgba(255, 255, 255, 0.005);
+}
+
+td {
+  text-align: center;
+}
+
+td,
+th {
+  line-height: 1.5rem;
+}
+
+thead td {
+  border-width: 0 1px 0 0;
+}
+
+thead th {
+  border-width: 1px 1px 0 0;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.unbanned {
+  color: #204020;
+}

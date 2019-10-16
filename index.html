@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Commander Banlist - MTGeni.us</title>
+    <link rel="stylesheet" media="all" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Condensed" />
+    <link rel="stylesheet" media="all" type="text/css" href="./index.css" />
+  </head>
+  <body>
+    <h1>Magic: The Gathering &mdash; Commander Banlist</h1>
+    <div id="loading">
+      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-pacman">
+        <g style="display:block">
+          <circle cx="53.92" cy="50" r="4" fill="rgba(255, 255, 255, 0.25)">
+            <animate attributeName="cx" calcMode="linear" values="95;35" keyTimes="0;1" dur="1" begin="-0.67s" repeatCount="indefinite"></animate>
+            <animate attributeName="fill-opacity" calcMode="linear" values="0;1;1" keyTimes="0;0.2;1" dur="1" begin="-0.67s" repeatCount="indefinite"></animate>
+          </circle>
+          <circle cx="74.32" cy="50" r="4" fill="rgba(255, 255, 255, 0.25)">
+            <animate attributeName="cx" calcMode="linear" values="95;35" keyTimes="0;1" dur="1" begin="-0.33s" repeatCount="indefinite"></animate>
+            <animate attributeName="fill-opacity" calcMode="linear" values="0;1;1" keyTimes="0;0.2;1" dur="1" begin="-0.33s" repeatCount="indefinite"></animate>
+          </circle>
+          <circle cx="94.12" cy="50" r="4" fill="rgba(255, 255, 255, 0.25)">
+            <animate attributeName="cx" calcMode="linear" values="95;35" keyTimes="0;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+            <animate attributeName="fill-opacity" calcMode="linear" values="0;1;1" keyTimes="0;0.2;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+          </circle>
+        </g>
+        <g transform="translate(-15 0)">
+          <path d="M50 50L20 50A30 30 0 0 0 80 50Z" fill="#303028" transform="rotate(1.31994 50 50)">
+            <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;45 50 50;0 50 50" keyTimes="0;0.5;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
+          </path>
+          <path d="M50 50L20 50A30 30 0 0 1 80 50Z" fill="#303028" transform="rotate(-1.31994 50 50)">
+            <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;-45 50 50;0 50 50" keyTimes="0;0.5;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
+          </path>
+        </g>
+      </svg>
+      <strong>
+        <noscript>
+          You need JavaScript enabled to view the banlists.
+        </noscript>
+      </strong>
+    </div>
+    <div id="error"></div>
+    <div id="success"></div>
+    <script type="text/javascript" src="./index.js"></script>
+    <div id="copyright">
+      &copy; 2018 
+      <a href="https://charlesstover.com/" rel="nofollow noopener noreferrer" title="Charles Stover's portfolio">Charles Stover</a>,
+      <a href="https://mtgeni.us/" rel="nofollow noopener noreferrer" title="MTGeni.us">MTGeni.us</a>
+    </div>
+  </body>
+</html>
