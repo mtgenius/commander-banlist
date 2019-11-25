@@ -5,13 +5,13 @@ abbr {
 }
 
 .banned {
-  color: #F04040;
+  color: #f04040;
 }
 
 body {
   background-color: #202020;
-  color: #F0F0F0;
-  font-family: "Roboto Condensed", sans-serif;
+  color: #f0f0f0;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 1em;
   height: 100%;
   margin: 0;
@@ -19,18 +19,28 @@ body {
 }
 
 #copyright {
-  line-height: 1.25em;
+  line-height: 2em;
   padding-top: 0.75em;
   text-align: center;
 }
 
 #copyright a {
-  color: #F0F0F0;
+  color: #f0f0f0;
   text-decoration: underline;
 }
 
+#copyright > div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#copyright > div > a {
+  margin-left: 0.333em;
+}
+
 #error {
-  color: #F0C0C0;
+  color: #f0c0c0;
   display: none;
   text-align: center;
 }

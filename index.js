@@ -1,45 +1,47 @@
-var API = 'https://api.mtgeni.us';
+var API = 'http://localhost:8081';
 var TABLE_WIDTH = 640;
 
 var error = document.getElementById('error');
 var loading = document.getElementById('loading');
-loading.getElementsByTagName('strong').item(0).appendChild(document.createTextNode('Loading'));
+loading
+  .getElementsByTagName('strong')
+  .item(0)
+  .appendChild(document.createTextNode('Loading'));
 
 if (typeof window.fetch !== 'function') {
   loading.style.setProperty('display', 'none');
-  error.appendChild(document.createTextNode('Your browser does not support the fetch API.'));
+  error.appendChild(
+    document.createTextNode('Your browser does not support the fetch API.'),
+  );
   error.style.setProperty('display', 'block');
-}
-
-else {
-  window.fetch(API + '/commander-banlist')
+} else {
+  window
+    .fetch(API + '/commander-banlist')
     .then(function(response) {
       return response.json();
     })
     .then(function(response) {
       var banlists = response;
       var BANLISTS_LENGTH = banlists.length;
-      var banlist = banlists.reduce(
-        function(accumulator, current, banlistIndex) {
-          var CARDS_LENGTH = current.cards.length;
-          for (var c = 0; c < CARDS_LENGTH; c++) {
-            var cardIndex = accumulator.findIndex(function(card) {
-              return card[0] === current.cards[c];
-            });
-            if (cardIndex === -1) {
-              accumulator.push([
-                current.cards[c],
-                banlistIndex
-              ]);
-            }
-            else {
-              accumulator[cardIndex].push(banlistIndex);
-            }
+      var banlist = banlists.reduce(function(
+        accumulator,
+        current,
+        banlistIndex,
+      ) {
+        var CARDS_LENGTH = current.cards.length;
+        for (var c = 0; c < CARDS_LENGTH; c++) {
+          var cardIndex = accumulator.findIndex(function(card) {
+            return card[0] === current.cards[c];
+          });
+          if (cardIndex === -1) {
+            accumulator.push([current.cards[c], banlistIndex]);
+          } else {
+            accumulator[cardIndex].push(banlistIndex);
           }
-          return accumulator;
-        },
-        []
-      );
+        }
+        return accumulator;
+      },
+      []);
       var BANLIST_LENGTH = banlist.length;
       banlist.sort(function(a, b) {
         if (a[0] < b[0]) {
@@ -74,7 +76,10 @@ else {
             thead.appendChild(theadTr);
             table.appendChild(thead);
             var tbody = document.createElement('tbody');
-            var LAST_CARD_INDEX = Math.min(BANLIST_LENGTH, (t + 1) * CARDS_PER_TABLE);
+            var LAST_CARD_INDEX = Math.min(
+              BANLIST_LENGTH,
+              (t + 1) * CARDS_PER_TABLE,
+            );
             for (var c = t * CARDS_PER_TABLE; c < LAST_CARD_INDEX; c++) {
               var tr = document.createElement('tr');
               var th = document.createElement('th');
@@ -82,23 +87,23 @@ else {
               tr.appendChild(th);
               for (var b = 0; b < BANLISTS_LENGTH; b++) {
                 var td = document.createElement('td');
-                var banned = banlist[c].findIndex(function(list, index) {
-                  if (index === 0) {
-                    return false;
-                  }
-                  return list === b;
-                }) !== -1;
+                var banned =
+                  banlist[c].findIndex(function(list, index) {
+                    if (index === 0) {
+                      return false;
+                    }
+                    return list === b;
+                  }) !== -1;
                 td.className = banned ? 'banned' : 'unbanned';
-                td.setAttribute('title',
-                  banned ?
-                    'Banned by ' + banlists[b].long :
-                    'Allowed by ' + banlists[b].long
+                td.setAttribute(
+                  'title',
+                  banned
+                    ? 'Banned by ' + banlists[b].long
+                    : 'Allowed by ' + banlists[b].long,
                 );
-                td.appendChild(document.createTextNode(
-                  banned ?
-                    '\u2718' :
-                    '\u2713'
-                ));
+                td.appendChild(
+                  document.createTextNode(banned ? '\u2718' : '\u2713'),
+                );
                 tr.appendChild(td);
               }
               tbody.appendChild(tr);
