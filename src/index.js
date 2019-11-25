@@ -1,4 +1,4 @@
-var API = 'http://localhost:8081';
+var API = 'https://api.mtgeni.us';
 var TABLE_WIDTH = 640;
 
 var error = document.getElementById('error');
