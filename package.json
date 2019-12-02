@@ -14,6 +14,7 @@
   },
   "scripts": {
     "build": "npm run prepublishOnly",
+    "lint": "eslint",
     "prepublishOnly": "react-scripts build",
     "start": "react-scripts start",
     "test": "jest",
@@ -23,8 +24,8 @@
     "fetch-suspense": "^1.2.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-mui-tooltip": "^1.0.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "use-force-update": "^1.0.7"
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",

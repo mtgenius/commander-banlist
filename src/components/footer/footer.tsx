@@ -14,17 +14,11 @@ const Link = styled.a`
   margin-left: 0.333em;
 `;
 
-const Section = styled.section`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-`;
-
 export default function Footer(): JSX.Element {
   return (
     <Copyright>
-      <Section>
-        &copy; 2018
+      <section>
+        &copy; 2018-{new Date().getFullYear()}
         <Link
           href="https://charlesstover.com/"
           rel="nofollow noopener noreferrer"
@@ -42,8 +36,8 @@ export default function Footer(): JSX.Element {
         >
           MTGeni.us
         </Link>
-      </Section>
-      <Section>
+      </section>
+      <section>
         <GitHubIcon />
         <Link
           href="https://github.com/mtgenius/commander-banlist"
@@ -62,7 +56,7 @@ export default function Footer(): JSX.Element {
         >
           Commander Banlist API
         </Link>
-      </Section>
+      </section>
     </Copyright>
   );
 }

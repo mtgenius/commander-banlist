@@ -24,7 +24,8 @@ const CardRowTd = styled(Td)`
 const CardRowTh = styled(Th)`
   border-width: 1px 1px 0 1px;
   font-weight: normal;
-  padding: 0.25rem 0.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
   text-align: left;
 `;
 

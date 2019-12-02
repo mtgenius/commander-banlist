@@ -1,12 +1,22 @@
 import React, { ReactNode } from 'react';
-import Banlist from '../../types/banlist';
-import { useBanlist } from './hooks';
-import { repeat } from './utils';
 import styled from 'styled-components';
+import Banlist from '../../types/banlist';
+import BannedCard from '../../types/banned-card';
 import { CardRow } from './components';
+import { useBanlist } from './hooks';
 import { Td, Th } from './styled';
+import { repeat } from './utils';
 
-const TABLE_WIDTH = 640;
+const WIDTH = 640;
+
+const Main = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0 0 1rem 0;
+`;
 
 const Table = styled.table`
   border-color: #303030;
@@ -14,11 +24,16 @@ const Table = styled.table`
   border-spacing: 0;
   border-width: 0 0 1px 0;
   box-sizing: border-box;
-  margin-right: 1rem;
-  width: ${TABLE_WIDTH}px;
+  width: 100%;
+`;
+
+const TableWrapper = styled.div`
+  box-sizing: border-box;
+  padding-right: 1rem;
+  width: ${WIDTH}px;
 
   &:first-child {
-    margin-left: 1rem;
+    padding-left: 1rem;
   }
 `;
 
@@ -39,15 +54,6 @@ const TheadThAbbr = styled.abbr`
   text-decoration: none;
 `;
 
-const Wrapper = styled.div`
-  align-items: flex-start;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 0 0 1rem 1rem;
-`;
-
 export default function BanlistComponent(): JSX.Element {
   const {
     banlists,
@@ -55,10 +61,10 @@ export default function BanlistComponent(): JSX.Element {
     bannedCardsCount,
     cardsPerTable,
     tableCount,
-  } = useBanlist(TABLE_WIDTH);
+  } = useBanlist(WIDTH);
 
   return (
-    <Wrapper>
+    <Main>
       {repeat(
         tableCount,
         (tableIndex: number): ReactNode => {
@@ -69,40 +75,46 @@ export default function BanlistComponent(): JSX.Element {
           );
 
           return (
-            <Table key={tableIndex}>
-              <thead>
-                <tr>
-                  <TheadTd></TheadTd>
-                  {banlists.map(
-                    (banlist: Banlist): JSX.Element => {
+            <TableWrapper key={tableIndex}>
+              <Table>
+                <thead>
+                  <tr>
+                    <TheadTd></TheadTd>
+                    {banlists.map(
+                      (banlist: Banlist): JSX.Element => {
+                        return (
+                          <TheadTh key={banlist.short}>
+                            <TheadThAbbr title={banlist.long}>
+                              {banlist.short}
+                            </TheadThAbbr>
+                          </TheadTh>
+                        );
+                      },
+                    )}
+                  </tr>
+                </thead>
+                <tbody>
+                  {repeat(
+                    tableCardsCount,
+                    (cardIndex: number): ReactNode => {
+                      const bannedCard: BannedCard = bannedCards[cardIndex];
                       return (
-                        <TheadTh key={banlist.short}>
-                          <TheadThAbbr title={banlist.long}>
-                            {banlist.short}
-                          </TheadThAbbr>
-                        </TheadTh>
+                        <CardRow
+                          banlists={banlists}
+                          bannedCard={bannedCard}
+                          key={bannedCard.name}
+                          odd={cardIndex % 2 === 1}
+                        />
                       );
                     },
+                    offset,
                   )}
-                </tr>
-              </thead>
-              <tbody>
-                {repeat(
-                  tableCardsCount,
-                  (cardIndex: number): ReactNode => (
-                    <CardRow
-                      banlists={banlists}
-                      bannedCard={bannedCards[cardIndex]}
-                      odd={cardIndex % 2 === 1}
-                    />
-                  ),
-                  offset,
-                )}
-              </tbody>
-            </Table>
+                </tbody>
+              </Table>
+            </TableWrapper>
           );
         },
       )}
-    </Wrapper>
+    </Main>
   );
 }

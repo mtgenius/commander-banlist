@@ -1,7 +1,7 @@
 import Banlist from '../../../types/banlist';
 import BannedCard from '../../../types/banned-card';
 import { reduceBanlistToBannedCards, sortBannedCardsByName } from '../utils';
-import { useBanlistApi, useTableCount } from '.';
+import { useCommanderBanlist, useTableCount } from '.';
 
 interface UseBanlist {
   banlists: Banlist[];
@@ -12,13 +12,13 @@ interface UseBanlist {
 }
 
 export default function useBanlist(tableWidth: number): UseBanlist {
-  const banlists = useBanlistApi();
+  const banlists: Banlist[] = useCommanderBanlist();
+
+  const tableCount: number = useTableCount(tableWidth);
 
   const bannedCards: BannedCard[] = banlists
     .reduce(reduceBanlistToBannedCards, [])
     .sort(sortBannedCardsByName);
-
-  const tableCount: number = useTableCount(tableWidth);
 
   return {
     banlists,
