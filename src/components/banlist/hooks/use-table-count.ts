@@ -20,6 +20,11 @@ export default function useTableCount(width: number): number {
 
   React.useEffect((): VoidFunction => {
     window.addEventListener('resize', handleWindowResize);
+
+    // Calculate the table count post-render, because rendering may have added
+    //   or removed a scrollbar, causing the wrapper width to have changed.
+    handleWindowResize();
+
     return (): void => {
       window.removeEventListener('resize', handleWindowResize);
     };
