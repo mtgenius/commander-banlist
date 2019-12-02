@@ -1,4 +1,4 @@
-# Commander Banlist
+# Commander Banlist [![travis](https://img.shields.io/travis/com/mtgenius/commander-banlist.svg)](https://travis-ci.com/mtgenius/commander-banlist)
 
 View the different Commander banlists all in one place.
 
