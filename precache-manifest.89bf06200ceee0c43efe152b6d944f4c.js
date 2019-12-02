@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "29aef4c4383c71e1431d4df6907805b4",
+    "revision": "8d6d62cc42124796ca78e4c08044923d",
     "url": "/commander-banlist/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/commander-banlist/static/js/2.52eb95b1.chunk.js"
   },
   {
-    "revision": "9a96447ff425015c4af8",
-    "url": "/commander-banlist/static/js/main.f1dd592d.chunk.js"
+    "revision": "d722fbcd0acf4b82a689",
+    "url": "/commander-banlist/static/js/main.7b7e048d.chunk.js"
   },
   {
     "revision": "930eead68dbc14d567e1",
