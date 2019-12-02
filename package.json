@@ -1,0 +1,49 @@
+{
+  "name": "@mtgenius/commander-banlist",
+  "version": "1.0.0",
+  "author": "Charles Stover <commander-banlist@mtgeni.us>",
+  "description": "View the different Commander banlists all in one place.",
+  "homepage": "https://mtgeni.us/commander-banlist",
+  "repository": "https://github.com/mtgenius/commander-banlist",
+  "bugs": {
+    "email": "commander-banlist@mtgeni.us",
+    "url": "https://github.com/mtgenius/commander-banlist/issues"
+  },
+  "directories": {
+    "lib": "src"
+  },
+  "scripts": {
+    "build": "npm run prepublishOnly",
+    "prepublishOnly": "react-scripts build",
+    "start": "react-scripts start",
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "dependencies": {
+    "fetch-suspense": "^1.2.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-mui-tooltip": "^1.0.0",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "@types/node": "^11.0.0",
+    "@types/react": "^16.3.0",
+    "@types/react-dom": "^16.3.0",
+    "@types/styled-components": "^4.4.0",
+    "@typescript-eslint/eslint-plugin": "^1.0.0",
+    "@typescript-eslint/parser": "^1.0.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^1.0.0",
+    "husky": "^2.0.0",
+    "jest": "^24.0.0",
+    "lint-staged": "^8.0.0",
+    "prettier": "^1.0.0",
+    "react-scripts": "^3.2.0",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.7.2"
+  }
+}
