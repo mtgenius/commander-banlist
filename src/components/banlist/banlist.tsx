@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import Banlist from '../../types/banlist';
 import BannedCard from '../../types/banned-card';
@@ -54,7 +54,7 @@ const TheadThAbbr = styled.abbr`
   text-decoration: none;
 `;
 
-export default function BanlistComponent(): JSX.Element {
+export default function BanlistComponent(): ReactElement {
   const {
     banlists,
     bannedCards,
@@ -67,7 +67,7 @@ export default function BanlistComponent(): JSX.Element {
     <Main>
       {repeat(
         tableCount,
-        (tableIndex: number): ReactNode => {
+        (tableIndex: number): ReactElement => {
           const offset: number = tableIndex * cardsPerTable;
           const tableCardsCount: number = Math.min(
             cardsPerTable,
@@ -81,11 +81,11 @@ export default function BanlistComponent(): JSX.Element {
                   <tr>
                     <TheadTd></TheadTd>
                     {banlists.map(
-                      (banlist: Banlist): JSX.Element => {
+                      (banlist: Banlist): ReactElement => {
                         return (
-                          <TheadTh key={banlist.short}>
-                            <TheadThAbbr title={banlist.long}>
-                              {banlist.short}
+                          <TheadTh key={banlist.shortName}>
+                            <TheadThAbbr title={banlist.longName}>
+                              {banlist.shortName}
                             </TheadThAbbr>
                           </TheadTh>
                         );
@@ -96,7 +96,7 @@ export default function BanlistComponent(): JSX.Element {
                 <tbody>
                   {repeat(
                     tableCardsCount,
-                    (cardIndex: number): ReactNode => {
+                    (cardIndex: number): ReactElement => {
                       const bannedCard: BannedCard = bannedCards[cardIndex];
                       return (
                         <CardRow

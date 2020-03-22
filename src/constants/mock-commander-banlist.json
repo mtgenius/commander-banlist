@@ -43,13 +43,13 @@
       "Worldfire",
       "Yawgmoth's Bargain"
     ],
-    "long": "Wizards of the Coast",
-    "short": "Multiplayer"
+    "longName": "Wizards of the Coast",
+    "shortName": "Multiplayer"
   },
   {
     "cards": ["Sorcerous Spyglass", "Oko, Thief of Crowns"],
-    "long": "Brawl",
-    "short": "Brawl"
+    "longName": "Brawl",
+    "shortName": "Brawl"
   },
   {
     "cards": [
@@ -99,8 +99,8 @@
       "Falling Star",
       "Shahrazad"
     ],
-    "long": "Magic the Gathering Online, 30 Life",
-    "short": "MTGO 1v1"
+    "longName": "Magic the Gathering Online, 30 Life",
+    "shortName": "MTGO 1v1"
   },
   {
     "cards": [
@@ -177,7 +177,7 @@
       "Treasure Cruise",
       "Vampiric Tutor"
     ],
-    "long": "Duel Commander, 20 Life",
-    "short": "Duel 1v1"
+    "longName": "Duel Commander, 20 Life",
+    "shortName": "Duel 1v1"
   }
 ]

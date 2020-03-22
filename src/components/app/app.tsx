@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import {
   Banlist,
   ErrorBoundary,
@@ -8,7 +8,7 @@ import {
   Loading,
 } from '..';
 
-export default function App(): JSX.Element {
+export default function App(): ReactElement {
   return (
     <>
       <Header />

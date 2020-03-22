@@ -1,5 +1,5 @@
 export default interface Banlist {
   cards: string[];
-  long: string;
-  short: string;
+  longName: string;
+  shortName: string;
 }

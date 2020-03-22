@@ -1,4 +1,4 @@
-import React, { MouseEvent, ReactNode } from 'react';
+import React, { MouseEvent, ReactElement } from 'react';
 import styled from 'styled-components';
 import Banlist from '../../../types/banlist';
 import BannedCard from '../../../types/banned-card';
@@ -51,7 +51,7 @@ export default function CardRow({
   banlists,
   bannedCard,
   odd,
-}: Props): JSX.Element {
+}: Props): ReactElement {
   const [isImageShown, setIsImageShown] = React.useState<boolean>(false);
 
   const handleClick = React.useCallback(
@@ -84,7 +84,7 @@ export default function CardRow({
         )}
       </CardRowTh>
       {banlists.map(
-        (banlist: Banlist): ReactNode => {
+        (banlist: Banlist): ReactElement => {
           const isBanned: boolean =
             banlist.cards.findIndex(
               (card: string): boolean => card === bannedCard.name,
@@ -93,11 +93,11 @@ export default function CardRow({
 
           return (
             <Td
-              key={banlist.short}
+              key={banlist.shortName}
               title={
                 isBanned
-                  ? `Banned by ${banlist.long}`
-                  : `Allowed by ${banlist.long}`
+                  ? `Banned by ${banlist.longName}`
+                  : `Allowed by ${banlist.longName}`
               }
             >
               {isBanned ? '\u2718' : '\u2713'}
